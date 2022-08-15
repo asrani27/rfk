@@ -174,6 +174,12 @@
                                     Kas Murni</a>
                                 @endif
 
+                                @if (Auth::user()->bidang->skpd->pergeseran == 1)
+                                <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/pergeseran/{{$item->id}}"
+                                    class="btn btn-xs btn-outline-primary"><i class="fas fa-exchange-alt"></i>
+                                    Pergeseran ke : {{$item->status}}</a>
+                                @endif
+
                                 @if (Auth::user()->bidang->skpd->perubahan == 1)
                                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/perubahan/{{$item->id}}"
                                     class="btn btn-xs btn-outline-primary"><i class="fas fa-sync"></i>

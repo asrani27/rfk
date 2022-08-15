@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Uraian;
 use App\Models\Program;
 use App\Models\Kegiatan;
+use App\Models\LogBukaTutup;
 use App\Models\Subkegiatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,14 +14,19 @@ class UraianController extends Controller
 {
     public function index($program_id, $kegiatan_id, $subkegiatan_id)
     {
-        $data = Uraian::where('subkegiatan_id', $subkegiatan_id)->orderBy('id', 'DESC')->get()->map(function ($item) {
-            $item->jumlah = $item->januari + $item->februari + $item->maret + $item->april + $item->mei + $item->juni + $item->juli + $item->agustus + $item->september + $item->oktober + $item->november + $item->desember;
-            return $item;
-        });
-        $program = Program::find($program_id);
-        $kegiatan = Kegiatan::find($kegiatan_id);
-        $subkegiatan = Subkegiatan::find($subkegiatan_id);
-        return view('bidang.uraian.index', compact('data', 'program', 'kegiatan', 'subkegiatan', 'program_id', 'kegiatan_id', 'subkegiatan_id'));
+        $logLatest = LogBukaTutup::latest()->first();
+
+        if ($logLatest != null) {
+
+            $data = Uraian::where('subkegiatan_id', $subkegiatan_id)->where('status', $logLatest->ke)->orderBy('id', 'DESC')->get()->map(function ($item) {
+                $item->jumlah = $item->januari + $item->februari + $item->maret + $item->april + $item->mei + $item->juni + $item->juli + $item->agustus + $item->september + $item->oktober + $item->november + $item->desember;
+                return $item;
+            });
+            $program = Program::find($program_id);
+            $kegiatan = Kegiatan::find($kegiatan_id);
+            $subkegiatan = Subkegiatan::find($subkegiatan_id);
+            return view('bidang.uraian.index', compact('data', 'program', 'kegiatan', 'subkegiatan', 'program_id', 'kegiatan_id', 'subkegiatan_id'));
+        }
     }
 
     public function create($program_id, $kegiatan_id, $subkegiatan_id)

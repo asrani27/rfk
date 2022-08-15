@@ -17,16 +17,33 @@ class BerandaController extends Controller
 
     public function duplikatData()
     {
-        $tahun = Carbon::now()->year;
-        $data = Uraian::where('skpd_id', Auth::user()->skpd->id)->where('tahun', $tahun)->get()->toArray();
-        foreach ($data as $i) {
-            $attr = $i;
-            $attr['uraian_id'] = $i['id'];
-            $attr['status'] = 2;
-            Uraian::create($attr);
-        }
 
-        return $data;
+        $logLatest = LogBukaTutup::latest()->first();
+
+        if ($logLatest->ke == null) {
+            $tahun = Carbon::now()->year;
+            $data = Uraian::where('skpd_id', Auth::user()->skpd->id)->where('tahun', $tahun)->get()->toArray();
+            foreach ($data as $i) {
+                $attr = $i;
+                $attr['uraian_id'] = $i['id'];
+                $attr['status'] = $attr['status'] == null ? 1 : $attr['status'] + 1;
+                Uraian::create($attr);
+            }
+
+            return $data;
+        } else {
+            $tahun = Carbon::now()->year;
+            $data = Uraian::where('skpd_id', Auth::user()->skpd->id)->where('tahun', $tahun)->where('status', $logLatest->ke)->get()->toArray();
+
+            foreach ($data as $i) {
+                $attr = $i;
+                $attr['uraian_id'] = $i['id'];
+                $attr['status'] = $attr['status'] == null ? 1 : $attr['status'] + 1;
+                Uraian::create($attr);
+            }
+
+            return $data;
+        }
     }
 
     public function admin()
