@@ -54,7 +54,7 @@ class BidangController extends Controller
             toastr()->success('Berhasil Di Hapus');
             return back();
         } catch (\Exception $e) {
-            toastr()->error('Tidak bisa di hapus karena memiliki sub kegiatan');
+            toastr()->error('Tidak bisa di hapus karena memiliki Data terkait Program');
             return back();
         }
     }
