@@ -28,7 +28,7 @@ class LoginController extends Controller
             if (Auth::user()->hasRole('superadmin')) {
                 return redirect('/beranda');
             } elseif (Auth::user()->hasRole('admin')) {
-                return redirect('/admin/beranda');
+                return redirect('/berandaskpd');
             } elseif (Auth::user()->hasRole('bidang')) {
                 return redirect('/berandabidang');
             } else {
