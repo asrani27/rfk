@@ -17,6 +17,14 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="/skpd/bidang/riwayat/kegiatan" class="nav-link {{Request::is('skpd/bidang/riwayat/kegiatan*') ? 'active' : ''}}">
+                <i class="nav-icon fas fa-list"></i>
+                <p>
+                    RIWAYAT KEGIATAN
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="/skpd/bidang/pptk" class="nav-link {{Request::is('skpd/bidang/pptk*') ? 'active' : ''}}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>

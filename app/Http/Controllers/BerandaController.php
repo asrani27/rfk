@@ -37,7 +37,7 @@ class BerandaController extends Controller
 
             foreach ($data as $i) {
                 $attr = $i;
-                $attr['uraian_id'] = $i['id'];
+                $attr['uraian_id'] = $i['uraian_id'];
                 $attr['status'] = $attr['status'] == null ? 1 : $attr['status'] + 1;
                 Uraian::create($attr);
             }

@@ -17,6 +17,7 @@ use App\Http\Controllers\PencarianController;
 use App\Http\Controllers\RealisasiController;
 use App\Http\Controllers\PergeseranController;
 use App\Http\Controllers\SubkegiatanController;
+use App\Http\Controllers\RiwayatKegiatanController;
 
 Route::get('/', [LoginController::class, 'showlogin'])->name('login');
 Route::get('/login', [LoginController::class, 'showlogin']);
@@ -105,6 +106,9 @@ Route::group(['middleware' => ['auth', 'role:bidang']], function () {
     Route::get('excel/rfk/{program_id}/{kegiatan_id}/{subkegiatan_id}', [ExcelController::class, 'rfk']);
     Route::get('excel/fiskeu/{program_id}/{kegiatan_id}/{subkegiatan_id}', [ExcelController::class, 'fiskeu']);
     Route::get('excel/input/{program_id}/{kegiatan_id}/{subkegiatan_id}', [ExcelController::class, 'input']);
+
+    Route::get('skpd/bidang/riwayat/kegiatan', [RiwayatKegiatanController::class, 'index']);
+    Route::get('skpd/bidang/riwayat/kegiatan/search', [RiwayatKegiatanController::class, 'tampilkan']);
 });
 
 Route::group(['middleware' => ['auth', 'role:bidang|pptk']], function () {
