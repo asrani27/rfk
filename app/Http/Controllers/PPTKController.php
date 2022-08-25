@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\PPTK;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class PPTKController extends Controller
@@ -35,13 +38,13 @@ class PPTKController extends Controller
 
     public function edit($id)
     {
-        $data = Bidang::find($id);
-        return view('admin.bidang.edit', compact('data'));
+        $data = PPTK::find($id);
+        return view('bidang.pptk.edit', compact('data'));
     }
 
     public function resetpass($id)
     {
-        Bidang::find($id)->user->update([
+        PPTK::find($id)->user->update([
             'password' => bcrypt('123456'),
         ]);
         toastr()->success('password baru : 123456');
@@ -50,61 +53,64 @@ class PPTKController extends Controller
     public function delete($id)
     {
         try {
-            Bidang::find($id)->delete();
+            PPTK::find($id)->delete();
             toastr()->success('Berhasil Di Hapus');
             return back();
         } catch (\Exception $e) {
-            toastr()->error('Tidak bisa di hapus karena memiliki Data terkait Program');
+            toastr()->error('Tidak bisa di hapus karena memiliki Data terkait Kegiatan');
             return back();
         }
     }
 
     public function update(Request $req, $id)
     {
-        $n = Bidang::find($id);
-        $n->nama = $req->nama;
+        $n = PPTK::find($id);
+        $n->nip_kabid = $req->nip_kabid;
+        $n->nama_kabid = $req->nama_kabid;
+        $n->nip_pptk = $req->nip_pptk;
+        $n->nama_pptk = $req->nama_pptk;
         $n->save();
 
         toastr()->success('Berhasil Di Update');
-        return redirect('/skpd/bidang');
+        return redirect('/skpd/bidang/pptk');
     }
 
     public function createuser($id)
     {
-        $data = Bidang::find($id);
-        return view('admin.bidang.createuser', compact('data'));
+        $data = PPTK::find($id);
+        return view('bidang.pptk.createuser', compact('data'));
     }
 
     public function storeuser(Request $req, $id)
     {
-        $bidang = Bidang::find($id);
+        $pptk = PPTK::find($id);
 
-        if (Auth::user()->skpd->id != $bidang->skpd_id) {
-            toastr()->error('Bidang Ini Bukan di SKPD anda');
+        if (Auth::user()->bidang->id != $pptk->bidang_id) {
+            toastr()->error('PPTK Ini Bukan di Bidang anda');
             return back();
         }
 
         DB::beginTransaction();
         try {
-            $role = Role::where('name', 'bidang')->first();
+            $role = Role::where('name', 'pptk')->first();
             $check = User::where('username', $req->username)->first();
             if ($check != null) {
                 toastr()->error('Username sudah ada, silahkan coba yang lain');
                 return back();
             } else {
                 $n = new User;
-                $n->name = $bidang->nama;
+                $n->name = $pptk->nama_pptk;
                 $n->username = $req->username;
                 $n->password = bcrypt($req->password);
                 $n->save();
 
                 $n->roles()->attach($role);
 
-                $bidang->update(['user_id' => $n->id]);
+                $pptk->update(['user_id' => $n->id]);
             }
             DB::commit();
             toastr()->success('Berhasil Di Buat');
-            return redirect('/skpd/bidang');
+            return redirect('/skpd/bidang/pptk');
         } catch (\Exception $e) {
             DB::rollback();
             toastr()->error('Sistem Error');

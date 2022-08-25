@@ -13,17 +13,35 @@
     <div class="col-md-12">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">EDIT BIDANG</h3>
+                <h3 class="card-title">EDIT PPTK</h3>
                 <!-- /.card-tools -->
             </div>
             <!-- /.card-header -->
-            <form method="post" action="/skpd/bidang/edit/{{$data->id}}">
+            <form method="post" action="/skpd/bidang/pptk/edit/{{$data->id}}">
                 @csrf
                 <div class="card-body" style="display: block;">
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">NAMA BIDANG</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="nama" value="{{$data->nama}}" required>
+                        <label class="col-sm-3 col-form-label">NIP SEKRETARIS/KABID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="nip_kabid" value="{{$data->nip_kabid}}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">NAMA SEKRETARIS/KABID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="nama_kabid" value="{{$data->nama_kabid}}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">NIP PPTK</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="nip_pptk" value="{{$data->nip_pptk}}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">NAMA PPTK</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="nama_pptk" value="{{$data->nama_pptk}}" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-block btn-primary">UPDATE</button><br />

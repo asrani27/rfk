@@ -59,6 +59,8 @@ Route::group(['middleware' => ['auth', 'role:bidang']], function () {
     Route::get('skpd/bidang/pptk/edit/{id}', [PPTKController::class, 'edit']);
     Route::post('skpd/bidang/pptk/edit/{id}', [PPTKController::class, 'update']);
     Route::get('skpd/bidang/pptk/delete/{id}', [PPTKController::class, 'delete']);
+    Route::get('skpd/bidang/pptk/createuser/{id}', [PPTKController::class, 'createuser']);
+    Route::post('skpd/bidang/pptk/createuser/{id}', [PPTKController::class, 'storeuser']);
 
     Route::get('skpd/bidang/program', [ProgramController::class, 'index']);
     Route::get('skpd/bidang/program/add', [ProgramController::class, 'create']);

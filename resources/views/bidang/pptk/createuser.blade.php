@@ -13,17 +13,17 @@
     <div class="col-md-12">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">BUAT USER BIDANG</h3>
+                <h3 class="card-title">BUAT USER PPTK</h3>
                 <!-- /.card-tools -->
             </div>
             <!-- /.card-header -->
-            <form method="post" action="/skpd/bidang/createuser/{{$data->id}}">
+            <form method="post" action="/skpd/bidang/pptk/createuser/{{$data->id}}">
                 @csrf
                 <div class="card-body" style="display: block;">
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">NAMA BIDANG</label>
+                        <label class="col-sm-2 col-form-label">NAMA PPTK</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="nama" value="{{$data->nama}}" readonly>
+                            <input type="text" class="form-control" name="nama" value="{{$data->nama_pptk}}" readonly>
                         </div>
                     </div>
 
