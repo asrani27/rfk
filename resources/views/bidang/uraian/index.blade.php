@@ -48,8 +48,8 @@
                 </div>
             </div>
             <!-- /.card-header -->
-            <div class="card-body table-responsive p-2">
-                <table id="example1" class="table table-bordered table-sm">
+            <div class="card-body p-2">
+                <table id="example" class="table table-bordered table-sm table-responsive ">
                     <thead>
                         <tr
                             style="background-image: linear-gradient(180deg, #268fff, #007bff); font-size:12px; color:white">
@@ -171,7 +171,7 @@
 
                                 <a href="/murni/{{$program_id}}/{{$kegiatan_id}}/{{$subkegiatan_id}}/{{$item->id}}"
                                     class="btn btn-xs btn-outline-primary"><i class="fas fa-money-bill"></i> Anggaran
-                                    Kas Murni</a>
+                                    Kas</a>
                                 @endif
 
                                 @if (Auth::user()->bidang->skpd->pergeseran == 1)

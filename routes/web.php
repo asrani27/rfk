@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PPTKController;
 use App\Http\Controllers\SkpdController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\LoginController;
@@ -44,6 +45,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('skpd/bidang/createuser/{id}', [BidangController::class, 'createuser']);
     Route::post('skpd/bidang/createuser/{id}', [BidangController::class, 'storeuser']);
 
+
     Route::get('skpd/bidang/resetpass/{id}', [BidangController::class, 'resetpass']);
 });
 
@@ -51,6 +53,12 @@ Route::group(['middleware' => ['auth', 'role:bidang']], function () {
     Route::get('berandabidang', [BerandaController::class, 'bidang']);
     Route::get('berandabidang/tahun', [PencarianController::class, 'bTahun']);
 
+    Route::get('skpd/bidang/pptk', [PPTKController::class, 'index']);
+    Route::get('skpd/bidang/pptk/add', [PPTKController::class, 'create']);
+    Route::post('skpd/bidang/pptk/add', [PPTKController::class, 'store']);
+    Route::get('skpd/bidang/pptk/edit/{id}', [PPTKController::class, 'edit']);
+    Route::post('skpd/bidang/pptk/edit/{id}', [PPTKController::class, 'update']);
+    Route::get('skpd/bidang/pptk/delete/{id}', [PPTKController::class, 'delete']);
 
     Route::get('skpd/bidang/program', [ProgramController::class, 'index']);
     Route::get('skpd/bidang/program/add', [ProgramController::class, 'create']);

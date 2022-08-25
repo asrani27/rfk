@@ -16,6 +16,22 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/skpd/bidang/pptk" class="nav-link {{Request::is('skpd/bidang/pptk*') ? 'active' : ''}}">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                    PPTK
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/skpd/bidang/gantipass" class="nav-link {{Request::is('skpd/bidang/gantipass*') ? 'active' : ''}}">
+                <i class="nav-icon fas fa-key"></i>
+                <p>
+                    GANTI PASS
+                </p>
+            </a>
+        </li>
 
         {{-- <li class="nav-item has-treeview {{Request::is('entri/data*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link {{Request::is('entri/data*') ? 'active' : ''}}">
