@@ -66,7 +66,7 @@ class MurniController extends Controller
             $req->flash();
             return back();
         }
-//csc        dd($jan_fisik + $feb_fisik);
+        
         $u = $uraian;
         $u->p_januari_keuangan     = $jan_keuangan;
         $u->p_februari_keuangan    = $feb_keuangan;

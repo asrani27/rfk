@@ -116,7 +116,6 @@ class BerandaController extends Controller
         $pergeseran = request()->get('pergeseran');
         $value = request()->get('value');
         if ($pergeseran == 'BUKA' && $value == "1") {
-
             $this->duplikatData();
             //check
             if (Auth::user()->skpd->murni != 0) {

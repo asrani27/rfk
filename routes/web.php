@@ -15,6 +15,7 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\GantiPassController;
 use App\Http\Controllers\PencarianController;
 use App\Http\Controllers\RealisasiController;
+use App\Http\Controllers\PergeseranController;
 use App\Http\Controllers\SubkegiatanController;
 
 Route::get('/', [LoginController::class, 'showlogin'])->name('login');
@@ -93,6 +94,9 @@ Route::group(['middleware' => ['auth', 'role:bidang']], function () {
 
     Route::get('murni/{program_id}/{kegiatan_id}/{subkegiatan_id}/{uraian_id}', [MurniController::class, 'create']);
     Route::post('murni/{program_id}/{kegiatan_id}/{subkegiatan_id}/{uraian_id}', [MurniController::class, 'store']);
+
+    Route::get('pergeseran/{program_id}/{kegiatan_id}/{subkegiatan_id}/{uraian_id}', [PergeseranController::class, 'create']);
+    Route::post('pergeseran/{program_id}/{kegiatan_id}/{subkegiatan_id}/{uraian_id}', [PergeseranController::class, 'store']);
 
     Route::get('realisasi/{program_id}/{kegiatan_id}/{subkegiatan_id}/{uraian_id}', [RealisasiController::class, 'create']);
     Route::post('realisasi/{program_id}/{kegiatan_id}/{subkegiatan_id}/{uraian_id}', [RealisasiController::class, 'store']);
