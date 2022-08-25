@@ -40,32 +40,33 @@ class MurniController extends Controller
         $des_keuangan = (int)str_replace(str_split('.'), '', $req->desember_keuangan);
         $keuangan = $jan_keuangan + $feb_keuangan + $mar_keuangan + $apr_keuangan + $mei_keuangan + $jun_keuangan + $jul_keuangan + $agu_keuangan + $sep_keuangan + $okt_keuangan + $nov_keuangan + $des_keuangan;
 
-        $jan_fisik = (int)str_replace(str_split('.'), '', $req->januari_fisik);
-        $feb_fisik = (int)str_replace(str_split('.'), '', $req->februari_fisik);
-        $mar_fisik = (int)str_replace(str_split('.'), '', $req->maret_fisik);
-        $apr_fisik = (int)str_replace(str_split('.'), '', $req->april_fisik);
-        $mei_fisik = (int)str_replace(str_split('.'), '', $req->mei_fisik);
-        $jun_fisik = (int)str_replace(str_split('.'), '', $req->juni_fisik);
-        $jul_fisik = (int)str_replace(str_split('.'), '', $req->juli_fisik);
-        $agu_fisik = (int)str_replace(str_split('.'), '', $req->agustus_fisik);
-        $sep_fisik = (int)str_replace(str_split('.'), '', $req->september_fisik);
-        $okt_fisik = (int)str_replace(str_split('.'), '', $req->oktober_fisik);
-        $nov_fisik = (int)str_replace(str_split('.'), '', $req->november_fisik);
-        $des_fisik = (int)str_replace(str_split('.'), '', $req->desember_fisik);
+        $jan_fisik = (float)str_replace(str_split(','), '.', $req->januari_fisik);
+        $feb_fisik = (float)str_replace(str_split(','), '.', $req->februari_fisik);
+        $mar_fisik = (float)str_replace(str_split(','), '.', $req->maret_fisik);
+        $apr_fisik = (float)str_replace(str_split(','), '.', $req->april_fisik);
+        $mei_fisik = (float)str_replace(str_split(','), '.', $req->mei_fisik);
+        $jun_fisik = (float)str_replace(str_split(','), '.', $req->juni_fisik);
+        $jul_fisik = (float)str_replace(str_split(','), '.', $req->juli_fisik);
+        $agu_fisik = (float)str_replace(str_split(','), '.', $req->agustus_fisik);
+        $sep_fisik = (float)str_replace(str_split(','), '.', $req->september_fisik);
+        $okt_fisik = (float)str_replace(str_split(','), '.', $req->oktober_fisik);
+        $nov_fisik = (float)str_replace(str_split(','), '.', $req->november_fisik);
+        $des_fisik = (float)str_replace(str_split(','), '.', $req->desember_fisik);
         $fisik = $jan_fisik + $feb_fisik + $mar_fisik + $apr_fisik + $mei_fisik + $jun_fisik + $jul_fisik + $agu_fisik + $sep_fisik + $okt_fisik + $nov_fisik + $des_fisik;
 
+        
         if ($keuangan != $uraian->dpa) {
             toastr()->error('Jumlah Keuangan: ' . number_format($keuangan) . ' Tidak Sesuai Dengan DPA (' . number_format($uraian->dpa) . ')');
             $req->flash();
             return back();
         }
 
-        // if ($fisik != $uraian->dpa) {
-        //     toastr()->error('Jumlah Fisik: ' . number_format($fisik) . ' Tidak Sesuai Dengan DPA (' . number_format($uraian->dpa) . ')');
-        //     $req->flash();
-        //     return back();
-        // }
-
+        if ($fisik != 100) {
+            toastr()->error('Jumlah Fisik: ' .$fisik . '%, Tidak 100%, Harap Ulangi');
+            $req->flash();
+            return back();
+        }
+//csc        dd($jan_fisik + $feb_fisik);
         $u = $uraian;
         $u->p_januari_keuangan     = $jan_keuangan;
         $u->p_februari_keuangan    = $feb_keuangan;

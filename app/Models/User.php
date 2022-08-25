@@ -59,4 +59,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Bidang::class, 'user_id');
     }
+
+    public function pptk()
+    {
+        return $this->hasOne(PPTK::class, 'user_id');
+    }
 }

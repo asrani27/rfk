@@ -53,6 +53,7 @@ class PPTKController extends Controller
     public function delete($id)
     {
         try {
+            PPTK::find($id)->user->delete();
             PPTK::find($id)->delete();
             toastr()->success('Berhasil Di Hapus');
             return back();

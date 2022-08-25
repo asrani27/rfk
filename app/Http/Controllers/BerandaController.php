@@ -215,4 +215,8 @@ class BerandaController extends Controller
         $data = null;
         return view('bidang.beranda', compact('data'));
     }
+    public function pptk()
+    {
+        return view('pptk.beranda');
+    }
 }

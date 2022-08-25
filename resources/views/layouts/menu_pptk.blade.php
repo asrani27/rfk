@@ -12,15 +12,7 @@
             <a href="/skpd/bidang/program" class="nav-link {{Request::is('skpd/bidang/program*') ? 'active' : ''}}">
                 <i class="nav-icon fas fa-file"></i>
                 <p>
-                    PROGRAM
-                </p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/skpd/bidang/pptk" class="nav-link {{Request::is('skpd/bidang/pptk*') ? 'active' : ''}}">
-                <i class="nav-icon fas fa-users"></i>
-                <p>
-                    PPTK
+                    KEGIATAN
                 </p>
             </a>
         </li>

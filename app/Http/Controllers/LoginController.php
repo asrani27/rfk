@@ -31,6 +31,8 @@ class LoginController extends Controller
                 return redirect('/berandaskpd');
             } elseif (Auth::user()->hasRole('bidang')) {
                 return redirect('/berandabidang');
+            } elseif (Auth::user()->hasRole('pptk')) {
+                return redirect('/berandapptk');
             } else {
                 return 'role lain';
             }

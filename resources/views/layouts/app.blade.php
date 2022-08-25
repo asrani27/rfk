@@ -53,6 +53,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @include('layouts.menu_superadmin')
         @elseif (Auth::user()->hasRole('admin'))
         @include('layouts.menu_admin')
+        @elseif (Auth::user()->hasRole('pptk'))
+        @include('layouts.menu_pptk')
         @else
         @include('layouts.menu_bidang')
         @endif

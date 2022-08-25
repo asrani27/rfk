@@ -90,73 +90,73 @@
                             <td>
                                 {{number_format($item->p_januari_keuangan)}} <br />
                                 {{number_format($item->r_januari_keuangan)}} <br />
-                                {{number_format($item->p_januari_fisik)}} <br />
+                                {{$item->p_januari_fisik}} <br />
                                 {{number_format($item->r_januari_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_februari_keuangan)}} <br />
                                 {{number_format($item->r_februari_keuangan)}} <br />
-                                {{number_format($item->p_februari_fisik)}} <br />
+                                {{$item->p_februari_fisik}} <br />
                                 {{number_format($item->r_februari_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_maret_keuangan)}} <br />
                                 {{number_format($item->r_maret_keuangan)}} <br />
-                                {{number_format($item->p_maret_fisik)}} <br />
+                                {{$item->p_maret_fisik}} <br />
                                 {{number_format($item->r_maret_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_april_keuangan)}} <br />
                                 {{number_format($item->r_april_keuangan)}} <br />
-                                {{number_format($item->p_april_fisik)}} <br />
+                                {{$item->p_april_fisik}} <br />
                                 {{number_format($item->r_april_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_mei_keuangan)}} <br />
                                 {{number_format($item->r_mei_keuangan)}} <br />
-                                {{number_format($item->p_mei_fisik)}} <br />
+                                {{$item->p_mei_fisik}} <br />
                                 {{number_format($item->r_mei_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_juni_keuangan)}} <br />
                                 {{number_format($item->r_juni_keuangan)}} <br />
-                                {{number_format($item->p_juni_fisik)}} <br />
+                                {{$item->p_juni_fisik}} <br />
                                 {{number_format($item->r_juni_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_juli_keuangan)}} <br />
                                 {{number_format($item->r_juli_keuangan)}} <br />
-                                {{number_format($item->p_juli_fisik)}} <br />
+                                {{($item->p_juli_fisik)}} <br />
                                 {{number_format($item->r_juli_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_agustus_keuangan)}} <br />
                                 {{number_format($item->r_agustus_keuangan)}} <br />
-                                {{number_format($item->p_agustus_fisik)}} <br />
+                                {{($item->p_agustus_fisik)}} <br />
                                 {{number_format($item->r_agustus_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_september_keuangan)}} <br />
                                 {{number_format($item->r_september_keuangan)}} <br />
-                                {{number_format($item->p_september_fisik)}} <br />
+                                {{($item->p_september_fisik)}} <br />
                                 {{number_format($item->r_september_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_oktober_keuangan)}} <br />
                                 {{number_format($item->r_oktober_keuangan)}} <br />
-                                {{number_format($item->p_oktober_fisik)}} <br />
+                                {{($item->p_oktober_fisik)}} <br />
                                 {{number_format($item->r_oktober_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_november_keuangan)}} <br />
                                 {{number_format($item->r_november_keuangan)}} <br />
-                                {{number_format($item->p_november_fisik)}} <br />
+                                {{($item->p_november_fisik)}} <br />
                                 {{number_format($item->r_november_fisik)}}
                             </td>
                             <td>
                                 {{number_format($item->p_desember_keuangan)}} <br />
                                 {{number_format($item->r_desember_keuangan)}} <br />
-                                {{number_format($item->p_desember_fisik)}} <br />
+                                {{($item->p_desember_fisik)}} <br />
                                 {{number_format($item->r_desember_fisik)}}
                             </td>
                             <td>
@@ -195,6 +195,45 @@
                         </tr>
                         @endforeach
                     </tbody>
+                    <tfoot>
+                        <tr style="font-size:12px;">
+                            <td></td>
+                            <td>Total Rencana Keuangan Perbulan</td>
+                            <td rowspan="2">{{number_format($data->sum('dpa'))}}</td>
+                            <td></td>
+                            <td>{{number_format($data->sum('p_januari_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_februari_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_maret_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_april_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_mei_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_juni_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_juli_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_agustus_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_september_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_oktoner_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_november_keuangan'))}}</td>
+                            <td>{{number_format($data->sum('p_desember_keuangan'))}}</td>
+                            <td></td>
+                        </tr>
+                        <tr style="font-size:12px;">
+                            <td></td>
+                            <td>Total Rencana Fisik Perbulan</td>
+                            <td></td>
+                            <td>{{$data->sum('p_januari_fisik')}}</td>
+                            <td>{{$data->sum('p_februari_fisik')}}</td>
+                            <td>{{$data->sum('p_maret_fisik')}}</td>
+                            <td>{{$data->sum('p_april_fisik')}}</td>
+                            <td>{{$data->sum('p_mei_fisik')}}</td>
+                            <td>{{$data->sum('p_juni_fisik')}}</td>
+                            <td>{{$data->sum('p_juli_fisik')}}</td>
+                            <td>{{$data->sum('p_agustus_fisik')}}</td>
+                            <td>{{$data->sum('p_september_fisik')}}</td>
+                            <td>{{$data->sum('p_oktober_fisik')}}</td>
+                            <td>{{$data->sum('p_november_fisik')}}</td>
+                            <td>{{$data->sum('p_desember_fisik')}}</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             <!-- /.card-body -->

@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="januari_fisik" id="januari_fisik"
-                                        value="{{number_format($uraian->p_januari_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_januari_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="februari_fisik" id="februari_fisik"
-                                        value="{{number_format($uraian->p_februari_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_februari_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="maret_fisik" id="maret_fisik"
-                                        value="{{number_format($uraian->p_maret_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_maret_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="april_fisik" id="april_fisik"
-                                        value="{{number_format($uraian->p_april_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_april_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="mei_fisik" id="mei_fisik"
-                                        value="{{number_format($uraian->p_mei_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_mei_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="juni_fisik" id="juni_fisik"
-                                        value="{{number_format($uraian->p_juni_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_juni_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="juli_fisik" id="juli_fisik"
-                                        value="{{number_format($uraian->p_juli_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_juli_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="agustus_fisik" id="agustus_fisik"
-                                        value="{{number_format($uraian->p_agustus_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_agustus_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="september_fisik" id="september_fisik"
-                                        value="{{number_format($uraian->p_september_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_september_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +232,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="oktober_fisik" id="oktober_fisik"
-                                        value="{{number_format($uraian->p_oktober_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_oktober_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +249,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="november_fisik" id="november_fisik"
-                                        value="{{number_format($uraian->p_november_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_november_fisik}}" required>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +266,7 @@
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="desember_fisik" id="desember_fisik"
-                                        value="{{number_format($uraian->p_desember_fisik, 0, '.', '.')}}" required>
+                                        value="{{$uraian->p_desember_fisik}}" required>
                                 </div>
                             </div>
                         </div>
