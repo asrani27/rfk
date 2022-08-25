@@ -218,6 +218,7 @@
                 <form method="get" action="/berandaskpd/pergeseran">
                     @csrf
                     <input type="text" class="form-control" name="pergeseran" value="" required><br />
+                    <input type="hidden" class="form-control" name="value" value="1" readonly>
 
                     <button type="submit" class="btn btn-sm btn-block bg-gradient-primary">BUKA</button>
                 </form>
@@ -238,6 +239,7 @@
                 <form method="get" action="/berandaskpd/pergeseran">
                     @csrf
                     <input type="text" class="form-control" name="pergeseran" value="" required><br />
+                    <input type="hidden" class="form-control" name="value" value="0" readonly>
 
                     <button type="submit" class="btn btn-sm btn-block bg-gradient-primary">TUTUP</button>
                 </form>

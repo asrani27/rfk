@@ -59,7 +59,7 @@ class BerandaController extends Controller
     public function setMurni()
     {
         $murni = request()->get('murni');
-        if ($murni == 'buka') {
+        if ($murni == 'BUKA') {
             //check
             if (Auth::user()->skpd->pergeseran != 0) {
                 toastr()->error('Pergeseran Harap Di tutup terlebih dahulu');
@@ -89,7 +89,13 @@ class BerandaController extends Controller
 
             toastr()->success('Penginputan Dibuka');
             return back();
-        } elseif ($murni == 'tutup') {
+        } elseif ($murni == 'TUTUP') {
+            
+            if (LogBukaTutup::where('tahun', Carbon::now()->year)->where('nama', 'murni')->first() != null) {
+                toastr()->error('Murni Hanya bisa di buka sekali');
+                return back();
+            }
+
             Auth::user()->skpd->update(['murni' => 0]);
 
             $n = new LogBukaTutup;
@@ -108,7 +114,8 @@ class BerandaController extends Controller
     public function setPergeseran()
     {
         $pergeseran = request()->get('pergeseran');
-        if ($pergeseran == 'buka') {
+        $value = request()->get('value');
+        if ($pergeseran == 'BUKA' && $value == "1") {
 
             $this->duplikatData();
             //check
@@ -144,7 +151,7 @@ class BerandaController extends Controller
             Auth::user()->skpd->update(['pergeseran' => 1]);
             toastr()->success('Penginputan Pergeseran Dibuka');
             return back();
-        } elseif ($pergeseran == 'tutup') {
+        } elseif ($pergeseran == 'TUTUP' && $value == "0") {
             $cp = LogBukaTutup::where('tahun', Carbon::now()->year)->where('nama', 'pergeseran')->latest()->first();
             Auth::user()->skpd->update(['pergeseran' => 0]);
             $n = new LogBukaTutup;
@@ -187,8 +194,8 @@ class BerandaController extends Controller
     public function setRealisasi()
     {
         $real = request()->get('realisasi');
-
-        if ($real == 'buka') {
+//        dd($real);
+        if ($real == 'BUKA') {
             Auth::user()->skpd->update(['realisasi' => 1]);
             $n = new LogBukaTutup;
             $n->tahun = Carbon::now()->year;
@@ -196,7 +203,7 @@ class BerandaController extends Controller
             $n->jenis = 'buka';
             $n->save();
             toastr()->success('Penginputan Dibuka');
-        } elseif ($real == 'tutup') {
+        } elseif ($real == 'TUTUP') {
             Auth::user()->skpd->update(['realisasi' => 0]);
             $n = new LogBukaTutup;
             $n->tahun = Carbon::now()->year;
