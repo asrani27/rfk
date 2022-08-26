@@ -159,7 +159,7 @@
                                 {{($item->p_desember_fisik)}} <br />
                                 {{number_format($item->r_desember_fisik)}}
                             </td>
-                            <td>
+                            <td style="width: 20%">
 
                                 @if (Auth::user()->bidang->skpd->murni == 1)
                                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/uraian/{{$subkegiatan_id}}/edit/{{$item->id}}"
