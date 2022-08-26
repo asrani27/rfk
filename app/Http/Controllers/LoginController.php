@@ -14,6 +14,8 @@ class LoginController extends Controller
                 return redirect('/beranda');
             } elseif (Auth::user()->hasRole('admin')) {
                 return redirect('/berandaskpd');
+            } elseif (Auth::user()->hasRole('pptk')) {
+                return redirect('/berandapptk');
             } else {
                 return redirect('/berandabidang');
             }

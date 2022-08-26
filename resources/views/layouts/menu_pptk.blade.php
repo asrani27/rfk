@@ -9,7 +9,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/skpd/bidang/program" class="nav-link {{Request::is('skpd/bidang/program*') ? 'active' : ''}}">
+            <a href="#" class="nav-link {{Request::is('skpd/bidang/program*') ? 'active' : ''}}">
                 <i class="nav-icon fas fa-file"></i>
                 <p>
                     KEGIATAN
