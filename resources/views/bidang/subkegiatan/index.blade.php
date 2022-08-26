@@ -51,7 +51,7 @@
                             <th>No</th>
                             <th>Sub Kegiatan</th>
                             <th>Aksi</th>
-                            <th>Export Data</th>
+                            {{-- <th>Export Data</th> --}}
                         </tr>
                     </thead>
                     @php
@@ -74,7 +74,7 @@
                                     onclick="return confirm('Yakin ingin di hapus');"
                                     class="btn btn-xs btn-outline-primary"><i class="fas fa-trash"></i></a>
                             </td>
-                            <td>
+                            {{-- <td>
                                 <a href="/export/januari/{{$item->id}}"
                                     class="btn btn-outline-primary btn-xs">JANUARI</a>
                                 <a href="/export/februari/{{$item->id}}"
@@ -94,17 +94,7 @@
                                     class="btn btn-outline-primary btn-xs">NOVEMBER</a>
                                 <a href="/export/desember/{{$item->id}}"
                                     class="btn btn-outline-primary btn-xs">DESEMBER</a>
-                                {{-- <a href="/excel/sp/{{$program_id}}/{{$kegiatan_id}}/{{$item->id}}"
-                                    class="btn btn-outline-primary btn-xs"><i class="fas fa-file-excel"></i> SR
-                                    PENGANTAR</a>
-                                <a href="/excel/rfk/{{$program_id}}/{{$kegiatan_id}}/{{$item->id}}"
-                                    class="btn btn-outline-primary btn-xs"><i class="fas fa-file-excel"></i> RFK</a>
-                                <a href="/excel/fiskeu/{{$program_id}}/{{$kegiatan_id}}/{{$item->id}}"
-                                    class="btn btn-outline-primary btn-xs"><i class="fas fa-file-excel"></i> FIS KEU</a>
-                                <a href="/excel/input/{{$program_id}}/{{$kegiatan_id}}/{{$item->id}}"
-                                    class="btn btn-outline-primary btn-xs"><i class="fas fa-file-excel"></i> INPUT</a>
-                                --}}
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
                     </tbody>
