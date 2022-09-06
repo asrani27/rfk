@@ -54,7 +54,7 @@ class MurniController extends Controller
         $des_fisik = (float)str_replace(str_split(','), '.', $req->desember_fisik);
         $fisik = $jan_fisik + $feb_fisik + $mar_fisik + $apr_fisik + $mei_fisik + $jun_fisik + $jul_fisik + $agu_fisik + $sep_fisik + $okt_fisik + $nov_fisik + $des_fisik;
 
-        dd($fisik, $jan_fisik, $feb_fisik, $mar_fisik, $apr_fisik, $mei_fisik, $jun_fisik, $jul_fisik);
+        dd($fisik, $jan_fisik, $feb_fisik, $mar_fisik, $apr_fisik, $mei_fisik, $jun_fisik, $jul_fisik, $agu_fisik,$sep_fisik,$okt_fisik,$nov_fisik,$des_fisik);
         if ($keuangan != $uraian->dpa) {
             toastr()->error('Jumlah Keuangan: ' . number_format($keuangan) . ' Tidak Sesuai Dengan DPA (' . number_format($uraian->dpa) . ')');
             $req->flash();
