@@ -16,6 +16,13 @@ function hitungUmur($umur)
     $umur = $y . " Tahun " . $m . " Bulan " . $d . " Hari";
     return $umur;
 }
+
+function dotToComma($param)
+{
+    $result = str_replace('.', ',', $param);
+    return $result;
+}
+
 function convertBulan($bulan)
 {
     if ($bulan == '01') {
