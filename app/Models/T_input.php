@@ -5,14 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subkegiatan extends Model
+class T_input extends Model
 {
     use HasFactory;
-    protected $table = 'subkegiatan';
+    protected $table = 't_input';
     protected $guarded = ['id'];
-
-    public function uraian()
-    {
-        return $this->hasMany(Uraian::class, 'subkegiatan_id');
-    }
 }

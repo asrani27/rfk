@@ -64,8 +64,11 @@
                             <td>{{$item->nama}}</td>
                             <td>
                                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/uraian/{{$item->id}}"
-                                    class="btn btn-xs btn-outline-primary"><i class="fas fa-list"></i> Uraian
+                                    class="btn btn-xs btn-outline-primary"><i class="fa fa-list"></i> Uraian
                                     Kegiatan</a>
+
+                                <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$item->id}}"
+                                        class="btn btn-xs btn-outline-primary"><i class="fas fa-file-excel-o"></i> Excel</a>
 
                                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/edit/{{$item->id}}"
                                     class="btn btn-xs btn-outline-primary"><i class="fas fa-edit"></i></a>
