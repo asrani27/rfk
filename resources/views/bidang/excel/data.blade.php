@@ -31,7 +31,9 @@
                     Data Untuk Di Export
                 </p>
                 <hr>
-                <strong><i class="fas fa-file mr-1"></i> Bulan</strong>
+                <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}">
+                    <strong><i class="fas fa-file mr-1"></i> Bulan</strong>
+                </a>
                 <p class="text-muted">
                     {{convertBulan($bulan)}}
                 </p>
@@ -52,6 +54,7 @@
                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/kppbj" class="btn bg-gradient-primary">KPPBJ</a>
                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/m" class="btn bg-gradient-primary">M</a>
                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/pbj" class="btn bg-gradient-primary">PBJ</a>
+                <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/st" class="btn bg-gradient-primary">ST</a>
                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/v" class="btn bg-gradient-primary">V</a>
                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/fiskeu" class="btn bg-gradient-primary">FIS KEU</a>
                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/input" class="btn bg-gradient-primary">INPUT</a>

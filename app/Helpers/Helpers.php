@@ -42,7 +42,7 @@ function convertBulan($bulan)
     } elseif ($bulan == '08') {
         $hasil = 'agustus';
     } elseif ($bulan == '09') {
-        $hasil = 'peptember';
+        $hasil = 'september';
     } elseif ($bulan == '10') {
         $hasil = 'oktober';
     } elseif ($bulan == '11') {

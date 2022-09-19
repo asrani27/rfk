@@ -68,7 +68,7 @@
                                     Kegiatan</a>
 
                                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$item->id}}"
-                                        class="btn btn-xs btn-outline-primary"><i class="fas fa-file-excel-o"></i> Excel</a>
+                                        class="btn btn-xs btn-outline-primary"><i class="fas fa-file-excel-o"></i> Rekap Data</a>
 
                                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/edit/{{$item->id}}"
                                     class="btn btn-xs btn-outline-primary"><i class="fas fa-edit"></i></a>

@@ -15,4 +15,8 @@ class Program extends Model
     {
         return $this->hasMany(Kegiatan::class, 'program_id');
     }
+    public function bidang()
+    {
+        return $this->belongsTo(Bidang::class, 'bidang_id');
+    }
 }

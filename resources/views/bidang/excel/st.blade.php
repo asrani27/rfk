@@ -46,7 +46,7 @@
                     <strong><i class="fas fa-file mr-1"></i> Jenis</strong>
                 </a>
                 <p class="text-muted">
-                    M
+                    ST
                 </p>
             </div>
             <!-- /.card-body -->
@@ -55,7 +55,7 @@
     <div class="col-12">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="card-title">M</h3>
+                <h3 class="card-title">ST</h3>
                 <div class="card-tools">
 
                 </div>
@@ -66,10 +66,14 @@
                         <tr
                             style="background-image: linear-gradient(180deg, #268fff, #007bff); font-size:12px; color:white">
                             <th>No</th>
-                            <th>Uraian Kegiatan</th>
-                            <th>Permasalahan</th>
-                            <th>Upaya Pemecahan Masalah</th>
-                            <th>Pihak Yang Di Harapkan Dapat Membantu</th>
+                            <th>Uraian Pekerjaan</th>
+                            <th>Nilai DPA</th>
+                            <th>Nilai Pagu<br/> Pengadaan BJ</th>
+                            <th>Nilai HPS</th>
+                            <th>Nilai Kontrak</th>
+                            <th>Sisa Tender</th>
+                            <th>Nama Penyedia Jasa</th>
+                            <th>Nomor Dan Tanggal Kontrak</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -80,13 +84,16 @@
                         @foreach ($data as $key => $item)
                         <tr style="font-size: 12px">
                             <td>{{$no++}}</td>
-                            <td>{{$item->t_input->uraiankegiatan->nama}}</td>
-                            <td>{{$item->permasalahan}}</td>
-                            <td>{{$item->upaya}}</td>
-                            <td>{{$item->pihak_pembantu}}</td>
-                            
+                            <td>{{$item->t_input->uraiankegiatan->nama}}<br/>{{$item->deskripsi}}</td>
+                            <td>{{number_format($item->t_input->uraiankegiatan->dpa)}}</td>
+                            <td>{{number_format($item->t_input->uraiankegiatan->dpa)}}</td>
+                            <td>{{number_format($item->nilai_hps)}}</td>
+                            <td>{{number_format($item->nilai_kontrak)}}</td>
+                            <td>{{number_format($item->t_input->uraiankegiatan->dpa - $item->nilai_kontrak)}}</td>
+                            <td>{{$item->penyedia}}</td>
+                            <td>{{$item->nomor_kontrak}} <br/>{{$item->tanggal_kontrak}}</td>
                             <td>
-                                <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/m/delete/{{$item->id}}"
+                                <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/st/delete/{{$item->id}}"
                                     onclick="return confirm('Yakin ingin di hapus');"
                                     class="btn btn-xs btn-outline-primary" data-toggle="tooltip" data-placement="top"
                                     title="Hapus Data"><i class="fas fa-trash"></i></a>
@@ -104,11 +111,11 @@
     <div class="col-12">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="card-title">FORM M</h3>
+                <h3 class="card-title">FORM ST</h3>
                 <div class="card-tools">
                 </div>
             </div>
-            <form class="form-horizontal" method="post" action="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/m">
+            <form class="form-horizontal" method="post" action="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/st">
                 @csrf
                 <div class="card-body">
                   <div class="form-group row">
@@ -122,21 +129,40 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Permasalahan</label>
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="permasalahan">
+                        <input type="text" class="form-control" name="deskripsi">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Upaya Pemecahan</label>
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nilai HPS</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="upaya">
+                        <input type="text" class="form-control" name="nilai_hps" onkeypress="return hanyaAngka(event)">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nilai Kontrak</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="nilai_kontrak" onkeypress="return hanyaAngka(event)">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Pihak Pembantu</label>
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Penyedia Jasa</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="pihak_pembantu">
+                        <input type="text" class="form-control" name="penyedia">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nomor Kontrak</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="nomor_kontrak">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Tanggal Kontrak</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="tanggal_kontrak">
                     </div>
                   </div>
                   <div class="form-group row">
