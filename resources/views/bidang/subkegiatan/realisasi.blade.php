@@ -297,12 +297,12 @@
                                     <input type="text" class="form-control" name="r_januari_keuangan"
                                         id="r_januari_keuangan"
                                         value="{{number_format($subkegiatan->r_januari_keuangan, 0, '.', '.')}}"
-                                        required {{\Carbon\Carbon::now()->month == 1 ? '':'readonly'}}>
+                                        required {{\Carbon\Carbon::now()->month == 1 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_januari_fisik" id="r_januari_fisik"
                                         value="{{number_format($subkegiatan->r_januari_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 1 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 1 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -316,13 +316,13 @@
                                     <input type="text" class="form-control" name="r_februari_keuangan"
                                         id="r_februari_keuangan"
                                         value="{{number_format($subkegiatan->r_februari_keuangan, 0, '.', '.')}}"
-                                        required {{\Carbon\Carbon::now()->month == 2 ? '':'readonly'}}>
+                                        required {{\Carbon\Carbon::now()->month == 2 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_februari_fisik"
                                         id="r_februari_fisik"
                                         value="{{number_format($subkegiatan->r_februari_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 2 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 2 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -336,12 +336,12 @@
                                     <input type="text" class="form-control" name="r_maret_keuangan"
                                         id="r_maret_keuangan"
                                         value="{{number_format($subkegiatan->r_maret_keuangan, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 3 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 3 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_maret_fisik" id="r_maret_fisik"
                                         value="{{number_format($subkegiatan->r_maret_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 3 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 3 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -355,12 +355,12 @@
                                     <input type="text" class="form-control" name="r_april_keuangan"
                                         id="r_april_keuangan"
                                         value="{{number_format($subkegiatan->r_april_keuangan, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 4 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 4 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_april_fisik" id="r_april_fisik"
                                         value="{{number_format($subkegiatan->r_april_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 4 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 4 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -373,12 +373,12 @@
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_mei_keuangan" id="r_mei_keuangan"
                                         value="{{number_format($subkegiatan->r_mei_keuangan, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 5 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 5 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_mei_fisik" id="r_mei_fisik"
                                         value="{{number_format($subkegiatan->r_mei_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 5 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 5 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -391,12 +391,12 @@
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_juni_keuangan" id="r_juni_keuangan"
                                         value="{{number_format($subkegiatan->r_juni_keuangan, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 6 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 6 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_juni_fisik" id="r_juni_fisik"
                                         value="{{number_format($subkegiatan->r_juni_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 6 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 6 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -409,12 +409,12 @@
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_juli_keuangan" id="r_juli_keuangan"
                                         value="{{number_format($subkegiatan->r_juli_keuangan, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 7 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 7 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_juli_fisik" id="r_juli_fisik"
                                         value="{{number_format($subkegiatan->r_juli_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 7 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 7 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -428,12 +428,12 @@
                                     <input type="text" class="form-control" name="r_agustus_keuangan"
                                         id="r_agustus_keuangan"
                                         value="{{number_format($subkegiatan->r_agustus_keuangan, 0, '.', '.')}}"
-                                        required {{\Carbon\Carbon::now()->month == 8 ? '':'readonly'}}>
+                                        required {{\Carbon\Carbon::now()->month == 8 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_agustus_fisik" id="r_agustus_fisik"
                                         value="{{number_format($subkegiatan->r_agustus_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 8 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 8 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -447,13 +447,13 @@
                                     <input type="text" class="form-control" name="r_september_keuangan"
                                         id="r_september_keuangan"
                                         value="{{number_format($subkegiatan->r_september_keuangan, 0, '.', '.')}}"
-                                        required {{\Carbon\Carbon::now()->month == 9 ? '':'readonly'}}>
+                                        required {{\Carbon\Carbon::now()->month == 9 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_september_fisik"
                                         id="r_september_fisik"
                                         value="{{number_format($subkegiatan->r_september_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month ==9 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month ==9 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -467,12 +467,12 @@
                                     <input type="text" class="form-control" name="r_oktober_keuangan"
                                         id="r_oktober_keuangan"
                                         value="{{number_format($subkegiatan->r_oktober_keuangan, 0, '.', '.')}}"
-                                        required {{\Carbon\Carbon::now()->month == 10 ? '':'readonly'}}>
+                                        required {{\Carbon\Carbon::now()->month == 10 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_oktober_fisik" id="r_oktober_fisik"
                                         value="{{number_format($subkegiatan->r_oktober_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 10 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 10 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -486,13 +486,13 @@
                                     <input type="text" class="form-control" name="r_november_keuangan"
                                         id="r_november_keuangan"
                                         value="{{number_format($subkegiatan->r_november_keuangan, 0, '.', '.')}}"
-                                        required {{\Carbon\Carbon::now()->month == 11 ? '':'readonly'}}>
+                                        required {{\Carbon\Carbon::now()->month == 11 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_november_fisik"
                                         id="r_november_fisik"
                                         value="{{number_format($subkegiatan->r_november_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 11 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 11 ? '':''}}>
                                 </div>
                             </div>
                         </div>
@@ -506,13 +506,13 @@
                                     <input type="text" class="form-control" name="r_desember_keuangan"
                                         id="r_desember_keuangan"
                                         value="{{number_format($subkegiatan->r_desember_keuangan, 0, '.', '.')}}"
-                                        required {{\Carbon\Carbon::now()->month == 12 ? '':'readonly'}}>
+                                        required {{\Carbon\Carbon::now()->month == 12 ? '':''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_desember_fisik"
                                         id="r_desember_fisik"
                                         value="{{number_format($subkegiatan->r_desember_fisik, 0, '.', '.')}}" required
-                                        {{\Carbon\Carbon::now()->month == 12 ? '':'readonly'}}>
+                                        {{\Carbon\Carbon::now()->month == 12 ? '':''}}>
                                 </div>
                             </div>
                         </div>
