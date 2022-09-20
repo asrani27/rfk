@@ -310,12 +310,12 @@
                                     <input type="text" class="form-control" name="r_januari_keuangan"
                                         id="r_januari_keuangan"
                                         value="{{number_format($uraian->r_januari_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==1 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==1 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_januari_fisik" id="r_januari_fisik"
                                         value="{{number_format($uraian->r_januari_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==1 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==1 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -329,13 +329,13 @@
                                     <input type="text" class="form-control" name="r_februari_keuangan"
                                         id="r_februari_keuangan"
                                         value="{{number_format($uraian->r_februari_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==2 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==2 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_februari_fisik"
                                         id="r_februari_fisik"
                                         value="{{number_format($uraian->r_februari_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==2 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==2 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -349,12 +349,12 @@
                                     <input type="text" class="form-control" name="r_maret_keuangan"
                                         id="r_maret_keuangan"
                                         value="{{number_format($uraian->r_maret_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==3 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==3 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_maret_fisik" id="r_maret_fisik"
                                         value="{{number_format($uraian->r_maret_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==3 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==3 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -368,12 +368,12 @@
                                     <input type="text" class="form-control" name="r_april_keuangan"
                                         id="r_april_keuangan"
                                         value="{{number_format($uraian->r_april_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==4 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==4 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_april_fisik" id="r_april_fisik"
                                         value="{{number_format($uraian->r_april_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==4 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==4 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -386,12 +386,12 @@
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_mei_keuangan" id="r_mei_keuangan"
                                         value="{{number_format($uraian->r_mei_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==5 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==5 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_mei_fisik" id="r_mei_fisik"
                                         value="{{number_format($uraian->r_mei_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==5 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==5 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -404,12 +404,12 @@
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_juni_keuangan" id="r_juni_keuangan"
                                         value="{{number_format($uraian->r_juni_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==6 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==6 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_juni_fisik" id="r_juni_fisik"
                                         value="{{number_format($uraian->r_juni_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==6 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==6 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -422,12 +422,12 @@
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_juli_keuangan" id="r_juli_keuangan"
                                         value="{{number_format($uraian->r_juli_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==7 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==7 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_juli_fisik" id="r_juli_fisik"
                                         value="{{number_format($uraian->r_juli_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==7 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==7 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -441,12 +441,12 @@
                                     <input type="text" class="form-control" name="r_agustus_keuangan"
                                         id="r_agustus_keuangan"
                                         value="{{number_format($uraian->r_agustus_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==8 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==8 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_agustus_fisik" id="r_agustus_fisik"
                                         value="{{number_format($uraian->r_agustus_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==8 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==8 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -460,13 +460,13 @@
                                     <input type="text" class="form-control" name="r_september_keuangan"
                                         id="r_september_keuangan"
                                         value="{{number_format($uraian->r_september_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==9 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==9 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_september_fisik"
                                         id="r_september_fisik"
                                         value="{{number_format($uraian->r_september_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==9 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==9 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -480,12 +480,12 @@
                                     <input type="text" class="form-control" name="r_oktober_keuangan"
                                         id="r_oktober_keuangan"
                                         value="{{number_format($uraian->r_oktober_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==10 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==10 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_oktober_fisik" id="r_oktober_fisik"
                                         value="{{number_format($uraian->r_oktober_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==10 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==10 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -499,13 +499,13 @@
                                     <input type="text" class="form-control" name="r_november_keuangan"
                                         id="r_november_keuangan"
                                         value="{{number_format($uraian->r_november_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==11 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==11 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_november_fisik"
                                         id="r_november_fisik"
                                         value="{{number_format($uraian->r_november_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==11 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==11 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
@@ -519,13 +519,13 @@
                                     <input type="text" class="form-control" name="r_desember_keuangan"
                                         id="r_desember_keuangan"
                                         value="{{number_format($uraian->r_desember_keuangan, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==12 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==12 ? '' :''}}>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="r_desember_fisik"
                                         id="r_desember_fisik"
                                         value="{{number_format($uraian->r_desember_fisik, 0, '.', '.')}}" required
-                                        {{$bulanrealisasi==12 ? '' :'readonly'}}>
+                                        {{$bulanrealisasi==12 ? '' :''}}>
                                 </div>
                             </div>
                         </div>
