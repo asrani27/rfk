@@ -57,20 +57,39 @@
                 </div>
             </div>
             <div class="card-body">
-                <table id="example1" class="table table-bordered table-sm">
+                <table id="example" class="table table-bordered table-sm table-responsive">
                     <thead>
                         <tr
-                            style="background-image: linear-gradient(180deg, #268fff, #007bff); font-size:12px; color:white">
-                            <th>No</th>
-                            <th>Uraian Pekerjaan</th>
-                            <th>Nilai DPA</th>
-                            <th>Jenis Pengadaan</th>
-                            <th>BARANG</th>
-                            <th>JASA KONSULTASI</th>
-                            <th>PEKERJAAN KONSTRUKSI</th>
-                            <th>JASA LAINNYA</th>
-                            <th>JUMLAH</th>
-                            <th></th>
+                            style="background-image: linear-gradient(180deg, #268fff, #007bff); font-size:11px; color:white; text-align:center">
+                            <th rowspan=2>No</th>
+                            <th rowspan=2>Uraian Pekerjaan</th>
+                            <th rowspan=2>Nilai DPA</th>
+                            <th rowspan=2>Jenis Pengadaan</th>
+                            <th colspan=3>BARANG</th>
+                            <th colspan=3>JASA KONSULTASI</th>
+                            <th colspan=3>PEKERJAAN KONSTRUKSI</th>
+                            <th colspan=3>JASA LAINNYA</th>
+                            <th colspan=3>JUMLAH</th>
+                            <th rowspan="2"></th>
+                        </tr>
+                        <tr
+                            style="background-image: linear-gradient(180deg, #268fff, #007bff); font-size:11px; color:white; text-align:center">
+                            
+                            <th>Belum</th>
+                            <th>Sedang</th>
+                            <th>Selesai</th>
+                            <th>Belum</th>
+                            <th>Sedang</th>
+                            <th>Selesai</th>
+                            <th>Belum</th>
+                            <th>Sedang</th>
+                            <th>Selesai</th>
+                            <th>Belum</th>
+                            <th>Sedang</th>
+                            <th>Selesai</th>
+                            <th>Belum</th>
+                            <th>Sedang</th>
+                            <th>Selesai</th>
                         </tr>
                     </thead>
                     @php
@@ -80,14 +99,24 @@
                         @foreach ($data as $key => $item)
                         <tr style="font-size: 12px">
                             <td>{{$no++}}</td>
-                            <td>{{$item->t_input->uraiankegiatan->nama}}</td>
+                            <td>{{$item->t_input->uraiankegiatan->nama}}<br/>{{$item->deskripsi}}</td>
                             <td>{{number_format($item->t_input->uraiankegiatan->dpa)}}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$item->jenis}}</td>
+                            <td>{{$item->b_belum}}</td>
+                            <td>{{$item->b_sedang}}</td>
+                            <td>{{$item->b_selesai}}</td>
+                            <td>{{$item->jk_belum}}</td>
+                            <td>{{$item->jk_sedang}}</td>
+                            <td>{{$item->jk_selesai}}</td>
+                            <td>{{$item->pk_belum}}</td>
+                            <td>{{$item->pk_sedang}}</td>
+                            <td>{{$item->pk_selesai}}</td>
+                            <td>{{$item->jl_belum}}</td>
+                            <td>{{$item->jl_sedang}}</td>
+                            <td>{{$item->jl_selesai}}</td>
+                            <td>{{$item->b_belum + $item->jk_belum + $item->pk_belum + $item->jl_belum}}</td>
+                            <td>{{$item->b_sedang + $item->jk_sedang + $item->pk_sedang + $item->jl_sedang}}</td>
+                            <td>{{$item->b_selesai + $item->jk_selesai + $item->pk_selesai + $item->jl_selesai}}</td>
                             
                             <td>
                                 <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/pbj/delete/{{$item->id}}"
@@ -123,6 +152,66 @@
                                 <option value="{{$item->id}}">{{$item->uraiankegiatan->kode_rekening}} - {{$item->uraiankegiatan->nama}} - DPA : {{number_format($item->uraiankegiatan->dpa)}}</option>
                             @endforeach
                         </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Deskripsi</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="deskripsi">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Jenis Pengadaan</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="jenis" placeholder="e-Purchasing">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Barang</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="belum" name="b_belum" onkeypress="return hanyaAngka(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="sedang" name="b_sedang" onkeypress="return hanyaAngka(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="selesai" name="b_selesai" onkeypress="return hanyaAngka(event)">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Jasa Konsultasi</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="belum" name="jk_belum" onkeypress="return hanyaAngka(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="sedang" name="jk_sedang" onkeypress="return hanyaAngka(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="selesai" name="jk_selesai" onkeypress="return hanyaAngka(event)">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Pekerjaan Konstruksi</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="belum" name="pk_belum" onkeypress="return hanyaAngka(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="sedang" name="pk_sedang" onkeypress="return hanyaAngka(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="selesai" name="pk_selesai" onkeypress="return hanyaAngka(event)">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Jasa Lainnya</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="belum" name="jl_belum" onkeypress="return hanyaAngka(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="sedang" name="jl_sedang" onkeypress="return hanyaAngka(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="selesai" name="jl_selesai" onkeypress="return hanyaAngka(event)">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -183,6 +272,13 @@
 <!-- Select2 -->
 <script src="/admin/plugins/select2/js/select2.full.min.js"></script>
 <script>
+    function hanyaAngka(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+    return false;
+    return true;
+}
     $(function () {
       //Initialize Select2 Elements
       $('.select2').select2()

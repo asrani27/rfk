@@ -60,8 +60,6 @@
 
                     <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/input/exportexcel/{{$pptk == null ? 0: $pptk->id}}" type="button" class="btn btn-outline-primary btn-sm">
                         <i class="fas fa-file-excel-o"></i> Excel</a>
-                        {{-- <a href="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/input/exportpdf/{{$pptk == null ? null: $pptk->id}}" type="button" class="btn btn-outline-danger btn-sm">
-                            <i class="fas fa-file-pdf-o"></i> PDF</a> --}}
                 </div>
             </div>
             <form class="form-horizontal" method="post" action="/skpd/bidang/program/kegiatan/{{$program_id}}/sub/{{$kegiatan_id}}/excel/{{$subkegiatan_id}}/{{$bulan}}/input">

@@ -7,6 +7,7 @@ use App\Models\Uraian;
 use App\Models\Program;
 use App\Models\T_input;
 use App\Models\Kegiatan;
+use App\Models\T_kppbj;
 use App\Models\T_pbj;
 use App\Models\T_pptk;
 use App\Models\T_st;
@@ -35,14 +36,40 @@ class ExcelController extends Controller
     }
     public function rfk($program_id, $kegiatan_id, $subkegiatan_id, $bulan)
     {
-        toastr()->info('Perlu pengembangan dan wawancara lebih lanjut terkait menu ini');
-        return back();
+        $program = Program::find($program_id);
+        $kegiatan = Kegiatan::find($kegiatan_id);
+        $uraian = T_input::where('subkegiatan_id', $subkegiatan_id)->where('bulan', $bulan)->where('tahun', $program->tahun)->get();
+        $data = T_input::where('subkegiatan_id', $subkegiatan_id)->where('bulan', $bulan)->where('tahun', $program->tahun)->get()->map(function ($item) {
+            return $item->uraiankegiatan;
+        });
+
+        return view('bidang.excel.rfk', compact('program', 'kegiatan', 'program_id', 'kegiatan_id', 'subkegiatan_id', 'bulan', 'uraian', 'data'));
     }
     public function kppbj($program_id, $kegiatan_id, $subkegiatan_id, $bulan)
     {
-        toastr()->info('Perlu pengembangan dan wawancara lebih lanjut terkait menu ini');
+        $program = Program::find($program_id);
+        $kegiatan = Kegiatan::find($kegiatan_id);
+        $uraian = T_input::where('subkegiatan_id', $subkegiatan_id)->where('bulan', $bulan)->where('tahun', $program->tahun)->get();
+        $data = T_input::where('subkegiatan_id', $subkegiatan_id)->where('bulan', $bulan)->where('tahun', $program->tahun)->get()->map(function ($item) {
+            return $item->kppbj;
+        })->collapse();
+
+        return view('bidang.excel.kppbj', compact('program', 'kegiatan', 'program_id', 'kegiatan_id', 'subkegiatan_id', 'bulan', 'uraian', 'data'));
+    }
+
+    public function deleteKppbj($program_id, $kegiatan_id, $subkegiatan_id, $bulan, $m_id)
+    {
+        T_kppbj::find($m_id)->delete();
+        toastr()->success('Berhasil Dihapus');
         return back();
     }
+    public function storeKppbj(Request $req, $program_id, $kegiatan_id, $subkegiatan_id, $bulan)
+    {
+        T_kppbj::create($req->all());
+        toastr()->success('Berhasil Di Simpan');
+        return back();
+    }
+
     public function m($program_id, $kegiatan_id, $subkegiatan_id, $bulan)
     {
         $program = Program::find($program_id);

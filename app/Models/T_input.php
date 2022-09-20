@@ -24,6 +24,10 @@ class T_input extends Model
     {
         return $this->hasMany(T_pbj::class, 't_input_id');
     }
+    public function kppbj()
+    {
+        return $this->hasMany(T_kppbj::class, 't_input_id');
+    }
     public function m()
     {
         return $this->hasMany(T_m::class, 't_input_id');

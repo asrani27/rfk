@@ -80,7 +80,7 @@
                         @foreach ($data as $key => $item)
                         <tr style="font-size: 12px">
                             <td>{{$no++}}</td>
-                            <td>{{$item->t_input->uraiankegiatan->nama}}</td>
+                            <td>{{$item->t_input->uraiankegiatan->nama}}<br/>{{$item->deskripsi}}</td>
                             <td>{{$item->permasalahan}}</td>
                             <td>{{$item->upaya}}</td>
                             <td>{{$item->pihak_pembantu}}</td>
@@ -119,6 +119,12 @@
                                 <option value="{{$item->id}}">{{$item->uraiankegiatan->kode_rekening}} - {{$item->uraiankegiatan->nama}} - DPA : {{number_format($item->uraiankegiatan->dpa)}}</option>
                             @endforeach
                         </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Deskripsi</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="deskripsi">
                     </div>
                   </div>
                   <div class="form-group row">
