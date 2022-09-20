@@ -109,7 +109,10 @@
                             <td>{{$no++}}</td>
                             <td>{{$item->nama}}</td>
                             <td>{{number_format($item->dpa)}}</td>
-                            <td>{{number_format($item->dpa/$data->sum('dpa')*100, 2, '.','')}}</td>
+                            <td>{{$item->persen_dpa}}</td>
+                            <td>{{number_format($item->r_rp)}}</td>
+                            <td>{{$item->r_kum}}</td>
+                            <td>{{$item->r_ttb}}</td>
                             {{-- <td>{{$item->metode}}</td>
                             <td>{{number_format($item->t_input->uraiankegiatan->dpa)}}</td>
                             <td>{{$item->progress}}</td>
@@ -126,7 +129,10 @@
                             <td></td>
                             <td>Jumlah</td>
                             <td>{{number_format($data->sum('dpa'))}}</td>
-                            <td>100.00</td>
+                            <td>{{$data->sum('persen_dpa')}}</td>
+                            <td>{{number_format($data->sum('r_rp'))}}</td>
+                            <td>{{$data->sum('r_kum')}}</td>
+                            <td>{{$data->sum('r_ttb')}}</td>
                         </tr>
                     </tfoot>
                 </table>

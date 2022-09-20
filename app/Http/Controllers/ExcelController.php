@@ -42,6 +42,22 @@ class ExcelController extends Controller
         $data = T_input::where('subkegiatan_id', $subkegiatan_id)->where('bulan', $bulan)->where('tahun', $program->tahun)->get()->map(function ($item) {
             return $item->uraiankegiatan;
         });
+        $sumdpa = $data->sum('dpa');
+        $min1bulan = (int)$bulan - 1;
+        $namabulan = convertBulan($min1bulan);
+        $data->map(function ($item) use ($sumdpa, $namabulan) {
+            $item->persen_dpa = number_format($item->dpa / $sumdpa * 100, 2, '.', '');
+            $field = 'p_' . $namabulan . '_keuangan';
+            $item->r_rp = $item[$field];
+            if ($item->r_rp == 0) {
+                $item->r_kum = 0;
+                $item->r_ttb = 0;
+            } else {
+                $item->r_kum = ($item->dpa / $item->r_rp) * 100;
+                $item->r_ttb = $item->r_kum * $item->persen_dpa / 100;
+            }
+            return $item;
+        });
 
         return view('bidang.excel.rfk', compact('program', 'kegiatan', 'program_id', 'kegiatan_id', 'subkegiatan_id', 'bulan', 'uraian', 'data'));
     }
