@@ -78,11 +78,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_januari_keuangan" id="januari_keuangan"
-                                    value="{{number_format($uraian->p_januari_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_januari_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_januari_fisik" id="januari_fisik"
-                                    value="{{number_format($uraian->p_januari_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_januari_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -95,11 +95,11 @@
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_februari_keuangan"
                                     id="februari_keuangan"
-                                    value="{{number_format($uraian->p_februari_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_februari_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_februari_fisik" id="februari_fisik"
-                                    value="{{number_format($uraian->p_februari_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_februari_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -111,11 +111,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_maret_keuangan" id="maret_keuangan"
-                                    value="{{number_format($uraian->p_maret_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_maret_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_maret_fisik" id="maret_fisik"
-                                    value="{{number_format($uraian->p_maret_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_maret_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -127,11 +127,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_april_keuangan" id="april_keuangan"
-                                    value="{{number_format($uraian->p_april_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_april_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_april_fisik" id="april_fisik"
-                                    value="{{number_format($uraian->p_april_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_april_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -143,11 +143,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_mei_keuangan" id="mei_keuangan"
-                                    value="{{number_format($uraian->p_mei_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_mei_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_mei_fisik" id="mei_fisik"
-                                    value="{{number_format($uraian->p_mei_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_mei_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -159,11 +159,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_juni_keuangan" id="juni_keuangan"
-                                    value="{{number_format($uraian->p_juni_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_juni_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_juni_fisik" id="juni_fisik"
-                                    value="{{number_format($uraian->p_juni_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_juni_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -175,11 +175,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_juli_keuangan" id="juli_keuangan"
-                                    value="{{number_format($uraian->p_juli_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_juli_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_juli_fisik" id="juli_fisik"
-                                    value="{{number_format($uraian->p_juli_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_juli_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -191,11 +191,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_agustus_keuangan" id="agustus_keuangan"
-                                    value="{{number_format($uraian->p_agustus_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_agustus_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_agustus_fisik" id="agustus_fisik"
-                                    value="{{number_format($uraian->p_agustus_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_agustus_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -208,11 +208,11 @@
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_september_keuangan"
                                     id="september_keuangan"
-                                    value="{{number_format($uraian->p_september_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_september_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_september_fisik" id="september_fisik"
-                                    value="{{number_format($uraian->p_september_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_september_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -224,11 +224,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_oktober_keuangan" id="oktober_keuangan"
-                                    value="{{number_format($uraian->p_oktober_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_oktober_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_oktober_fisik" id="oktober_fisik"
-                                    value="{{number_format($uraian->p_oktober_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_oktober_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -241,11 +241,11 @@
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_november_keuangan"
                                     id="november_keuangan"
-                                    value="{{number_format($uraian->p_november_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_november_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_november_fisik" id="november_fisik"
-                                    value="{{number_format($uraian->p_november_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_november_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
@@ -258,11 +258,11 @@
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_desember_keuangan"
                                     id="desember_keuangan"
-                                    value="{{number_format($uraian->p_desember_keuangan, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_desember_keuangan, 0, '.', '.')}}">
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control" name="p_desember_fisik" id="desember_fisik"
-                                    value="{{number_format($uraian->p_desember_fisik, 0, '.', '.')}}" readonly>
+                                    value="{{number_format($uraian->p_desember_fisik, 0, '.', '.')}}">
                             </div>
                         </div>
                     </div>
