@@ -61,11 +61,11 @@ class MurniController extends Controller
             return back();
         }
 
-        if ((int)$fisik != 100) {
-            toastr()->error('Jumlah Fisik: ' . $fisik . '%, Tidak 100%, Harap Ulangi');
-            $req->flash();
-            return back();
-        }
+        // if ((int)$fisik != 100) {
+        //     toastr()->error('Jumlah Fisik: ' . $fisik . '%, Tidak 100%, Harap Ulangi');
+        //     $req->flash();
+        //     return back();
+        // }
 
         $u = $uraian;
         $u->p_januari_keuangan     = $jan_keuangan;
